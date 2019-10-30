@@ -9,17 +9,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
 <body>
-    <h1>le noteKeeper</h1>
-
+<div class="container">
+    <div class="jumbotron" style="background:lightblue !important">
+    <h1 class="h1">no(d)eKeeper</h1>
+        <small class="text-muted text-white">A simple Node exercise</small>
+    </div>
+</div>
     <% if (noteArray) { %>
-    <ul>
+    <ul class="list-group">
         <% for(let note in noteArray) { %>
-        <li> <%=note = noteArray[note] %> </li>
+        <li class="list-group-item text-danger">X <%=note = noteArray[note] %> </li>
         <% } %>
     </ul>
     <% } %>
 
-    <form action="/submitted" method="GET">
+    <form class="form-group" action="/submitted" method="GET">
          Add a note:<br>
         <input type="text" name="note" value="note"><br>
         <input type="submit" value="Submit">

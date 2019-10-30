@@ -19,4 +19,10 @@ app.get('/submitted', (request, response) => {
     response.render('view.ejs', {noteArray});
 });
 
+app.get('/:noteID/delete', (request, response) => {
+    noteArray.splice(parseInt(request.params.noteID));
+    console.log(noteArray);
+    response.render('view.ejs', {noteArray});
+});
+
 app.listen(8075);
